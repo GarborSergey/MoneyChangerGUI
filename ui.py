@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'ui.ui'
+# Form implementation generated from reading ui file 'ui/ui.ui'
 #
 # Created by: PyQt6 UI code generator 6.4.2
 #
@@ -42,22 +42,9 @@ class Ui_MainWindow(object):
         self.label_2.setStyleSheet("")
         self.label_2.setLineWidth(0)
         self.label_2.setText("")
-        self.label_2.setPixmap(QtGui.QPixmap("Pictures/change.png"))
+        self.label_2.setPixmap(QtGui.QPixmap("ui\\../Pictures/change.png"))
         self.label_2.setScaledContents(True)
         self.label_2.setObjectName("label_2")
-        self.inputCurrency = QtWidgets.QLineEdit(parent=self.centralwidget)
-        self.inputCurrency.setGeometry(QtCore.QRect(50, 280, 380, 60))
-        font = QtGui.QFont()
-        font.setFamily("Arial")
-        font.setPointSize(14)
-        self.inputCurrency.setFont(font)
-        self.inputCurrency.setStyleSheet("background-color: #22222e;\n"
-                                         "border: 2px solid #f66867;\n"
-                                         "border-radius: 30px;\n"
-                                         "color: white;")
-        self.inputCurrency.setText("")
-        self.inputCurrency.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.inputCurrency.setObjectName("inputCurrency")
         self.inputAmount = QtWidgets.QLineEdit(parent=self.centralwidget)
         self.inputAmount.setGeometry(QtCore.QRect(50, 360, 380, 60))
         font = QtGui.QFont()
@@ -65,25 +52,12 @@ class Ui_MainWindow(object):
         font.setPointSize(14)
         self.inputAmount.setFont(font)
         self.inputAmount.setStyleSheet("background-color: #22222e;\n"
-                                       "border: 2px solid #f66867;\n"
-                                       "border-radius: 30px;\n"
-                                       "color: white;")
+"border: 2px solid #f66867;\n"
+"border-radius: 30px;\n"
+"color: white;")
         self.inputAmount.setText("")
         self.inputAmount.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.inputAmount.setObjectName("inputAmount")
-        self.outputCurrency = QtWidgets.QLineEdit(parent=self.centralwidget)
-        self.outputCurrency.setGeometry(QtCore.QRect(50, 440, 380, 60))
-        font = QtGui.QFont()
-        font.setFamily("Arial")
-        font.setPointSize(14)
-        self.outputCurrency.setFont(font)
-        self.outputCurrency.setStyleSheet("background-color: #22222e;\n"
-                                          "border: 2px solid #f66867;\n"
-                                          "border-radius: 30px;\n"
-                                          "color: white;")
-        self.outputCurrency.setText("")
-        self.outputCurrency.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.outputCurrency.setObjectName("outputCurrency")
         self.outputAmount = QtWidgets.QLineEdit(parent=self.centralwidget)
         self.outputAmount.setGeometry(QtCore.QRect(50, 520, 380, 60))
         font = QtGui.QFont()
@@ -91,9 +65,9 @@ class Ui_MainWindow(object):
         font.setPointSize(14)
         self.outputAmount.setFont(font)
         self.outputAmount.setStyleSheet("background-color: #22222e;\n"
-                                        "border: 2px solid #f66867;\n"
-                                        "border-radius: 30px;\n"
-                                        "color: white;")
+"border: 2px solid #f66867;\n"
+"border-radius: 30px;\n"
+"color: white;")
         self.outputAmount.setText("")
         self.outputAmount.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.outputAmount.setObjectName("outputAmount")
@@ -104,33 +78,45 @@ class Ui_MainWindow(object):
         font.setPointSize(16)
         self.pushButton.setFont(font)
         self.pushButton.setStyleSheet("QPushButton {\n"
-                                      "    background-color: #fb5b5d;\n"
-                                      "    border-radius: 30px;\n"
-                                      "    color: white;\n"
-                                      "}\n"
-                                      "\n"
-                                      "QPushButton:pressed {\n"
-                                      "     background-color: #fa4244;\n"
-                                      "}")
+"    background-color: #fb5b5d;\n"
+"    border-radius: 30px;\n"
+"    color: white;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"     background-color: #fa4244;\n"
+"}")
         self.pushButton.setObjectName("pushButton")
+        self.inputCurrency = QtWidgets.QComboBox(parent=self.centralwidget)
+        self.inputCurrency.setGeometry(QtCore.QRect(50, 280, 380, 60))
+        self.inputCurrency.setAutoFillBackground(False)
+        self.inputCurrency.setStyleSheet("background-color: #22222e;\n"
+"border: 2px solid #f66867;\n"
+"border-radius: 30px;\n"
+"color: white;")
+        self.inputCurrency.setInsertPolicy(QtWidgets.QComboBox.InsertPolicy.InsertAtBottom)
+        self.inputCurrency.setDuplicatesEnabled(False)
+        self.inputCurrency.setObjectName("inputCurrency")
+        self.outputCurrency = QtWidgets.QComboBox(parent=self.centralwidget)
+        self.outputCurrency.setGeometry(QtCore.QRect(50, 440, 380, 60))
+        self.outputCurrency.setAutoFillBackground(False)
+        self.outputCurrency.setStyleSheet("background-color: #22222e;\n"
+"border: 2px solid #f66867;\n"
+"border-radius: 30px;\n"
+"color: white;")
+        self.outputCurrency.setInsertPolicy(QtWidgets.QComboBox.InsertPolicy.InsertAtBottom)
+        self.outputCurrency.setDuplicatesEnabled(False)
+        self.outputCurrency.setObjectName("outputCurrency")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
+        self.inputCurrency.setCurrentIndex(-1)
+        self.outputCurrency.setCurrentIndex(-1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label.setText(_translate("MainWindow", "MoneyChanger"))
+        self.inputAmount.setToolTip(_translate("MainWindow", "<html><head/><body><p>sd</p></body></html>"))
         self.pushButton.setText(_translate("MainWindow", "CONVERT"))
-
-
-if __name__ == "__main__":
-    import sys
-
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec())

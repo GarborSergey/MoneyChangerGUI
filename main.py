@@ -3,8 +3,10 @@ from os import sep
 from PyQt6 import QtCore, QtGui, QtWidgets, uic
 from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QMainWindow
-from currency_converter import CurrencyConverter
+from utils import CurrenciesConverter
+from config import CURRENCY
 from ui import Ui_MainWindow
+
 
 
 class MoneyChanger(QMainWindow):
@@ -18,20 +20,20 @@ class MoneyChanger(QMainWindow):
         self.setWindowTitle('Money changer')
         self.setWindowIcon(QIcon('Pictures' + sep + 'change.png'))
 
-        self.ui.inputCurrency.setPlaceholderText('Из валюты: ')
-        self.ui.outputCurrency.setPlaceholderText('В валюту: ')
+        self.ui.inputCurrency.addItems(CURRENCY)
+        self.ui.outputCurrency.addItems(CURRENCY)
         self.ui.inputAmount.setPlaceholderText('У меня есть: ')
         self.ui.outputAmount.setPlaceholderText('Я получу: ')
 
         self.ui.pushButton.clicked.connect(self.converter)
 
     def converter(self):
-        c = CurrencyConverter()
-        inputCurrency = self.ui.inputCurrency.text()
-        outputCurrency = self.ui.outputCurrency.text()
+        c = CurrenciesConverter()
+        inputCurrency = self.ui.inputCurrency.currentText()
+        outputCurrency = self.ui.outputCurrency.currentText()
         inputAmount = float(self.ui.inputAmount.text())
 
-        outputAmount = round(c.convert(inputAmount, '%s' % inputCurrency, '%s' % outputCurrency), 2)
+        outputAmount = c.convert(inputCurrency, outputCurrency, inputAmount)
 
         self.ui.outputAmount.setText(str(outputAmount))
 
