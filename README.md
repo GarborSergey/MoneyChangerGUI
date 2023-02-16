@@ -1,5 +1,5 @@
 ### MoneyChangerGUI
 
 This GUI app for converting various currencies one to another.<br>
-Use framework PyQt.
+Use framework PyQt6 and QT designer.
 >reply: [Repository](https://github.com/ithobbies/CurrencyConverter), [YouTube](https://www.youtube.com/watch?v=jylguK_7gVQ&ab_channel=ITH) 
